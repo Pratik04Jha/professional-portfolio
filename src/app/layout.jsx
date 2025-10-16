@@ -18,8 +18,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          
           <Navbar />
-          {children}
+          <main className="mt-21 mx-auto">{children}</main>
         </ThemeProvider>
       </body>
     </html>

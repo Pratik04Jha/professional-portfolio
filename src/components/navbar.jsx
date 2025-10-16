@@ -13,15 +13,13 @@ import Link from "next/link";
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
+  { title: "Blogs", href: "/about" },
   { title: "Projects", href: "/" },
-  { title: "Stack", href: "/" },
-  { title: "Contact", href: "/" },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="flex fixed top-0 left-0 w-full justify-between py-2 px-10">
+    <nav className="flex fixed top-0 left-0 w-full justify-between py-6 px-20 bg-background/90 backdrop-blur-2xl">
       <NavigationMenu className="">
         <NavigationMenuList className="">
           {links.map((items, index) => (
