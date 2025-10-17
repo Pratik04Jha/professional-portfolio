@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 export default function Introduction() {
   return (
-    <Card className="w-full  mx-auto bg-accent/10 p-10">
+    <Card className="w-full mx-auto bg-accent/10 p-10">
       <h1
         className={`${GeistMono.className} text-3xl md:text-4xl font-bold tracking-tight  mb-2`}
       >

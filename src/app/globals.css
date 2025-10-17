@@ -125,3 +125,8 @@
   background: #47A3F3;
   color: #ffffff;
 }
+
+::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+}

@@ -23,7 +23,7 @@ export default function BlogPost({ items }) {
             <div className="flex gap-2">
               <p>{items.author}</p> • <p>{items.datePublished}</p>
             </div>
-            <p className="line-clamp-4">{items.exerpt}</p>
+            <p className="line-clamp-4 text-[15px] text-foreground/80">{items.exerpt}</p>
           </div>
           <div className="gap-5 flex ">
             <Link href="{`/posts/${items.slug}`}">

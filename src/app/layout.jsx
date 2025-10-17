@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
+import Footer from "@/components/footer";
 
 export const metadata = {
   title: "Pratik Jha | Portfolio",
@@ -18,9 +19,9 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          
           <Navbar />
           <main className="my-21 mx-auto">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
