@@ -1,6 +1,7 @@
 import Blogs from "@/components/cards/blogs";
 import Introduction from "@/components/cards/introduction";
 import Profile from "@/components/cards/profile";
+import Projects from "@/components/cards/projects";
 
 export default function () {
   return (
@@ -10,6 +11,7 @@ export default function () {
         <Introduction />
       </div>
       <Blogs />
+      <Projects />
     </div>
   );
 }

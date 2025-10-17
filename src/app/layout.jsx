@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         >
           
           <Navbar />
-          <main className="mt-21 mx-auto">{children}</main>
+          <main className="my-21 mx-auto">{children}</main>
         </ThemeProvider>
       </body>
     </html>

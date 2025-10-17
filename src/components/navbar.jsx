@@ -19,7 +19,7 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="flex fixed top-0 left-0 w-full justify-between py-6 px-20 bg-background/90 backdrop-blur-2xl">
+    <nav className="flex fixed top-0 left-0 w-full justify-between py-6 px-20 bg-background/6 0 backdrop-blur-2xl">
       <NavigationMenu className="">
         <NavigationMenuList className="">
           {links.map((items, index) => (
