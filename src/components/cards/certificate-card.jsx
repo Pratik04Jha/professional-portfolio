@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Certificates({ cert }) {
   return (
-    <Card className="overflow-hidden md:w-105 bg-accent/20">
+    <Card className="overflow-hidden md:w-105 bg-accent/20 flex-shrink-0">
       <CardHeader>
         <Image
           src={cert.image}
@@ -20,8 +20,8 @@ export default function Certificates({ cert }) {
           height={100}
           className="object-cover object-center w-full rounded-2xl select-none pointer-events-none"
         />
-        <CardTitle className="text-2xl">{cert.title}</CardTitle>
-        <CardDescription className="text-sm line-clamp-3">
+        <CardTitle className="text-xl sm:text-2xl">{cert.title}</CardTitle>
+        <CardDescription className="text-xs sm:text-sm line-clamp-3">
           {cert.description}
         </CardDescription>
       </CardHeader>
@@ -30,18 +30,18 @@ export default function Certificates({ cert }) {
         <div className="w-full flex flex-col gap-2 items-center justify-between">
           <div className="flex  flex-col w-full text-sm">
             <p className="text-xs text-muted-foreground">Issued</p>
-            <p className="font-medium">{cert.issuedDate}</p>
+            <p className="font-medium text-xs sm:text-sm">{cert.issuedDate}</p>
           </div>
           <div className="flex  flex-col w-full text-sm">
             <p className="text-xs text-muted-foreground">Credential ID</p>
-            <p className="font-medium">{cert.credentialId}</p>
+            <p className="font-medium text-xs sm:text-sm">{cert.credentialId}</p>
           </div>
         </div>
         <div className="flex items-center justify-start gap-2">
-          <Button variant="default" size="sm">
+          <Button variant="default" size="sm" className="text-xs font-semibold sm:text-sm">
             View certificate
           </Button>
-          <Button variant="outline" size="sm" className="gap-2">
+          <Button variant="outline" size="sm" className="gap-2 text-xs font-semibold sm:text-sm">
             <ExternalLink className="w-4 h-4" />
             Credential ID
           </Button>

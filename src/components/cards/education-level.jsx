@@ -36,14 +36,11 @@ export default function EducationLevels({ education }) {
       <div className="flex flex-col">
         <CardHeader>
           <div className="space-y-1">
-            <div className="flex gap-2 items-center">
-              <CardTitle className="text-2xl">
-                {education.school.name}
-              </CardTitle>
-              <Badge variant="outline" className="text-[10px]">
+              <CardTitle className="text-2xl md:flex md:items-center md:gap-2">
+                {education.school.name}<Badge variant="outline" className="text-[10px] ">
                 {education.school.exam}
               </Badge>
-            </div>
+              </CardTitle>
             <CardDescription className="text-sm font-medium text-foreground/80">
               {education.school.degree}
             </CardDescription>
