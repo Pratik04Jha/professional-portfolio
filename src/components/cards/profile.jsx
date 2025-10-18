@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 
 export default function Profile() {
   return (
-    <Card className="w-full max-w-lg mx-auto bg-accent/10 p-10">
+    <Card className="w-full md:max-w-lg mx-auto bg-accent/10 p-10">
       <div className="h-full gap-5 flex flex-col justify-center w-full items-center">
         <div className="h-35 w-35 overflow-hidden rounded-full flex items-center pointer-events-none select-none">
           <Image

@@ -8,7 +8,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { GeistMono } from "geist/font/mono";
 
 const languages = [
   { name: "English", level: 90, projects: "Professional" },
@@ -19,7 +18,7 @@ const languages = [
 
 export default function LanguagesCard() {
   return (
-    <Card className="w-full mx-auto max-w-lg bg-accent/10">
+    <Card className="w-full mx-auto md:max-w-lg bg-accent/10">
       <CardHeader>
         <div className="flex flex-col text-center items-center gap-3">
           <div className="p-5 rounded-full border bg-accent/30">

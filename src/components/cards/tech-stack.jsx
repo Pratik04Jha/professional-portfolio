@@ -79,7 +79,7 @@ export default function StackCard() {
                     {stack.technologies.map((tech) => (
                       <div
                         key={tech.name}
-                        className="flex items-center w-62 justify-between p-3 rounded-lg border bg-muted/20 hover:bg-muted/40 transition-colors"
+                        className="flex items-center gap-2 md:w-62 justify-between p-3 rounded-lg border bg-muted/20 hover:bg-muted/40 transition-colors"
                       >
                         <span className="text-sm font-medium">{tech.name}</span>
                         <Badge variant="outline" className="text-xs">

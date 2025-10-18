@@ -14,8 +14,8 @@ import { ExternalLink } from "lucide-react";
 
 export default function EducationLevels({ education }) {
   return (
-    <Card className="overflow-hidden flex flex-row px-5 items-center bg-accent/20">
-      <div className="relative h-65 w-140 overflow-hidden bg-muted rounded-2xl">
+    <Card className="overflow-hidden flex flex-col md:flex-row md:px-5 items-center bg-accent/20">
+      <div className="relative h-65 w-[90%] md:w-140 overflow-hidden bg-muted rounded-2xl">
         <Image
           src={education.school.image}
           alt={education.school.name}

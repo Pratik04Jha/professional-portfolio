@@ -28,7 +28,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="w-full flex justify-between py-6 px-20 items-center ">
+    <footer className="w-full flex justify-between py-6 px-5 md:px-20 items-center ">
       <p>MIT licenses</p>
       <div className="gap-5 flex">
         {socials.map((items, index) => (

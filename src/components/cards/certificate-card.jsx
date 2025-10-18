@@ -11,7 +11,7 @@ import Image from "next/image";
 
 export default function Certificates({ cert }) {
   return (
-    <Card className="overflow-hidden w-105 bg-accent/20">
+    <Card className="overflow-hidden md:w-105 bg-accent/20">
       <CardHeader>
         <Image
           src={cert.image}

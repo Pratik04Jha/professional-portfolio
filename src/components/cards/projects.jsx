@@ -77,7 +77,7 @@ export default function Projects() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-rows-2 grid-cols-3 gap-10">
+        <div className="grid md:grid-rows-2 md:grid-cols-3 gap-10">
           {projectsData.map((items, index) => (
             <ProjectCards items={items} key={index} />
           ))}

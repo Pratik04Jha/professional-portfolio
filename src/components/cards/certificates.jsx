@@ -53,7 +53,7 @@ export default function CertificatesCard() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="flex flex-wrap justify-between">
+        <div className="grid gap-5 grid-cols-1 md:grid-cols-3 w-full justify-end">
           {certificates.map((items, index) => (
             <Certificates cert={items} key={index} />
           ))}
