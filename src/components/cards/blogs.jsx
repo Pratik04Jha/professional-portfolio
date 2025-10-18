@@ -1,5 +1,11 @@
 import { GeistMono } from "geist/font/mono";
-import { Card } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Button } from "../ui/button";
 import BlogPost from "./blog-post";
 
@@ -38,20 +44,23 @@ const blogsData = [
 
 export default function Blogs() {
   return (
-    <Card className="bg-accent/10 p-10">
-      <h1
-        className={`${GeistMono.className} text-3xl md:text-4xl font-bold tracking-tight  mb-2`}
-      >
-        Blog posts
-      </h1>
-
-      {blogsData.map((items, index) => (
-        <BlogPost items={items} key={index} />
-      ))}
-
-      <Button variant="outline" className="py-6">
-        Real all blogs
-      </Button>
+    <Card className="bg-accent/10">
+      <CardHeader>
+        <CardTitle>Blog posts</CardTitle>
+        <CardDescription>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus
+          et, at similique voluptates maxime magnam facilis, voluptate natus
+          itaque culpa?
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-5">
+        {blogsData.map((items, index) => (
+          <BlogPost items={items} key={index} />
+        ))}
+        <Button variant="outline" className="py-6">
+          Real all blogs
+        </Button>
+      </CardContent>
     </Card>
   );
 }

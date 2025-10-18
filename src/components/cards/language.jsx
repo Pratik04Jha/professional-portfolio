@@ -27,8 +27,7 @@ export default function LanguagesCard() {
           </div>
           <div>
             <CardTitle>
-              <span className={`${GeistMono.className} text-3xl`}>
-                {" "}
+              <span>
                 Languages
               </span>
             </CardTitle>

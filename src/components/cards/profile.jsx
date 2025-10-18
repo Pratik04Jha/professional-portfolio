@@ -6,7 +6,7 @@ export default function Profile() {
   return (
     <Card className="w-full max-w-lg mx-auto bg-accent/10 p-10">
       <div className="h-full gap-5 flex flex-col justify-center w-full items-center">
-        <div className="h-35 w-35 overflow-hidden rounded-full flex items-center">
+        <div className="h-35 w-35 overflow-hidden rounded-full flex items-center pointer-events-none select-none">
           <Image
             src="/profile_2.jpg"
             alt="profile picture"
@@ -17,7 +17,7 @@ export default function Profile() {
         </div>
 
         <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-1">
+          <h1 className="md:text-4xl font-bold tracking-tight mb-1">
             Pratik Jha
           </h1>
           <p className={`${GeistMono.className} text-sm text-foreground/80`}>

@@ -33,18 +33,18 @@ const hobbies = [
 
 export default function HobbiesCard() {
   return (
-    <Card className="max-w-2xl bg-accent/10">
+    <Card className="min-w-[50%] bg-accent/10">
       <CardHeader>
-        <CardTitle className="text-xl">Hobbies & Interests</CardTitle>
+        <CardTitle>Hobbies & Interests</CardTitle>
         <CardDescription>Things I enjoy doing in my free time</CardDescription>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           {hobbies.map((hobby) => {
             const Icon = hobby.icon;
             return (
               <Card key={hobby.name} className="bg-accent/20">
-                <CardContent className="pt-6">
+                <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <div className="p-2.5 rounded-lg border bg-muted/50">

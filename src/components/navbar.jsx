@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./ui/mode-toggle-btn";
 import Link from "next/link";
+import { Button } from "./ui/button";
 
 const links = [
   { title: "Home", href: "/" },
@@ -24,14 +25,17 @@ export default function Navbar() {
         <NavigationMenuList className="">
           {links.map((items, index) => (
             <NavigationMenuItem key={index}>
-              <NavigationMenuLink asChild  className="px-3 py-2">
-                <Link href={items.href} >{items.title}</Link>
+              <NavigationMenuLink asChild className="px-3 py-2">
+                <Link href={items.href}>{items.title}</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
           ))}
         </NavigationMenuList>
       </NavigationMenu>
-      <ModeToggle />
+      <div className="flex items-center gap-5">
+        <ModeToggle />
+        <Button className="font-semibold">Resume</Button>
+      </div>
     </nav>
   );
 }

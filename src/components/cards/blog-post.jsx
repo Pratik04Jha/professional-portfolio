@@ -7,7 +7,7 @@ export default function BlogPost({ items }) {
   return (
     <Card className=" w-full bg-accent/20 p-5 ">
       <div className="flex w-full gap-8 justify-between">
-        <div className="h-55 min-w-100">
+        <div className="h-55 min-w-100 pointer-events-none select-none">
           <Image
             className="h-full w-full object-center object-cover rounded-2xl"
             src={items.imgSrc}
@@ -17,7 +17,7 @@ export default function BlogPost({ items }) {
           />
         </div>
 
-        <div className="flex flex-col justify-between ">
+        <div className="flex flex-col justify-between">
           <div className="flex flex-col gap-2 ">
             <h1 className="text-2xl font-semibold  ">{items.title}</h1>
             <div className="flex gap-2">
@@ -30,7 +30,7 @@ export default function BlogPost({ items }) {
               <Button className="font-semibold">Read blog</Button>
             </Link>
             <Link href="/">
-              <Button variant="outline" className="font-semibold ">
+              <Button variant="outline" className="font-semibold">
                 View on medium
               </Button>
             </Link>

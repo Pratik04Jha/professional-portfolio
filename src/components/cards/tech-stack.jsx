@@ -40,7 +40,7 @@ export default function StackCard() {
   return (
     <Card className="w-full mx-auto bg-accent/10 ">
       <CardHeader>
-        <CardTitle className="text-3xl">Technology Stack</CardTitle>
+        <CardTitle>Technology Stack</CardTitle>
         <CardDescription>Tools and frameworks I work with</CardDescription>
       </CardHeader>
       <CardContent>
