@@ -1,3 +1,4 @@
+import { formatDate } from "@/lib/utils";
 import { BookOpenTextIcon } from "lucide-react";
 
 export default async function GetBlogs({ params }) {
@@ -38,14 +39,7 @@ export default async function GetBlogs({ params }) {
   const data = await res.json();
   const post = data.data.post;
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  };
+  
 
   return (
     <div className="prose mx-auto px-30 flex flex-col justify-center w-full">

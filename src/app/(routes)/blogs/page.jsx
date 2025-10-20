@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Image from "next/image";
+import { formatDate } from "@/lib/utils";
 import Link from "next/link";
 
 const query = `
@@ -46,16 +46,6 @@ export default async function GetPosts() {
 
   const data = await res.json();
   const posts = data.data.publication.posts.edges.map((e) => e.node);
-  console.log(data);
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    });
-  };
 
   return (
     <div className="flex flex-col gap-5  ">
