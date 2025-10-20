@@ -14,8 +14,9 @@ import { Button } from "./ui/button";
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "Blogs", href: "/about" },
-  { title: "Projects", href: "/" },
+  { title: "Blogs", href: "/blogs" },
+  { title: "Projects", href: "/projects" },
+  { title: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
