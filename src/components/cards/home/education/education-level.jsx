@@ -36,11 +36,12 @@ export default function EducationLevels({ education }) {
       <div className="flex flex-col">
         <CardHeader>
           <div className="space-y-1">
-              <CardTitle className="text-2xl md:flex md:items-center md:gap-2">
-                {education.school.name}<Badge variant="outline" className="text-[10px] ">
+            <CardTitle className="text-2xl md:flex md:items-center md:gap-2">
+              {education.school.name}
+              <Badge variant="outline" className="text-[10px] ">
                 {education.school.exam}
               </Badge>
-              </CardTitle>
+            </CardTitle>
             <CardDescription className="text-sm font-medium text-foreground/80">
               {education.school.degree}
             </CardDescription>
@@ -69,15 +70,16 @@ export default function EducationLevels({ education }) {
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2">
-            <Link target="_blank" href={education.school.website}>
-              <Button className="font-semibold">
-                <ExternalLink /> <p className="pr-2">Visit website</p>
+            <Link href="/education">
+              <Button variant="outline" className="font-semibold">
+                View details
               </Button>
             </Link>
-            <Button variant="outline" size="sm" className="gap-2">
-              <BookOpen className="w-4 h-4" />
-              Related Blogs
-            </Button>
+            <Link target="_blank" href={education.school.website}>
+              <Button className="font-semibold" variant="link">
+                School website
+              </Button>
+            </Link>
           </div>
         </CardContent>
       </div>

@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Certificates from "./certificate-card";
 
-
 const certificates = [
   {
     title: "React Foundations",
@@ -20,7 +19,8 @@ const certificates = [
     description:
       "Completed comprehensive training in React fundamentals, covering core concepts including components, props, state management, and hooks.",
     image: "/certificates_img/certificate.png",
-    verifyUrl: "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
+    verifyUrl:
+      "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
   },
   {
     title: "React Foundations",
@@ -30,7 +30,8 @@ const certificates = [
     description:
       "Completed comprehensive training in React fundamentals, covering core concepts including components, props, state management, and hooks.",
     image: "/certificates_img/certificate.png",
-    verifyUrl: "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
+    verifyUrl:
+      "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
   },
   {
     title: "React Foundations",
@@ -40,7 +41,8 @@ const certificates = [
     description:
       "Completed comprehensive training in React fundamentals, covering core concepts including components, props, state management, and hooks.",
     image: "/certificates_img/certificate.png",
-    verifyUrl: "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
+    verifyUrl:
+      "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
   },
   {
     title: "React Foundations",
@@ -50,7 +52,8 @@ const certificates = [
     description:
       "Completed comprehensive training in React fundamentals, covering core concepts including components, props, state management, and hooks.",
     image: "/certificates_img/certificate.png",
-    verifyUrl: "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
+    verifyUrl:
+      "https://nextjs.org/learn/certificate?course=react-foundations&user=16898&certId=react-foundations-16898-1748260213558",
   },
 ];
 

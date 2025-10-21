@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { projectDetails } from "@/lib/constants";
+import { projectDetails } from "@/lib/constants/ProjectDetails";
 
 export async function generateStaticParams() {
   return projectDetails.map((project) => ({
@@ -27,12 +27,12 @@ export default async function ProjectDetailsPage({ params }) {
 
       <div className="space-y-8">
         <div className="space-y-4">
-          <Image
+          <img
             src={project.imgSrc}
             alt={project.title}
             width={1200}
             height={600}
-            className="w-full rounded-2xl object-cover object-center border border-[#292A2A]"
+            className="w-full rounded-2xl object-cover object-center border border-[#292A2A] pointer-events-none select-none "
           />
 
           <div className="flex flex-wrap gap-4 items-center justify-between">
@@ -88,9 +88,9 @@ export default async function ProjectDetailsPage({ params }) {
             <h2 className="text-2xl font-semibold">Key Features</h2>
             <ul className="grid md:grid-cols-2 gap-3">
               {project.features.map((feature, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <span className="text-primary mt-1">✓</span>
-                  <span>{feature}</span>
+                <li key={idx} className="flex items-center gap-2">
+                  <p className="text-primary mt-1">•</p>
+                  <p>{feature}</p>
                 </li>
               ))}
             </ul>
@@ -98,9 +98,9 @@ export default async function ProjectDetailsPage({ params }) {
         )}
 
         {project.fullDescription && (
-          <div className="space-y-3">
+          <div className="">
             <h2 className="text-2xl font-semibold">About This Project</h2>
-            <div className="prose prose-invert max-w-none whitespace-pre-line">
+            <div className="prose prose-invert  whitespace-pre-line">
               {project.fullDescription}
             </div>
           </div>

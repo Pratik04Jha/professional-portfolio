@@ -1,13 +1,13 @@
-import Blogs from "@/components/cards/blogs";
-import CertificatesCard from "@/components/cards/certificates";
-import EducationCard from "@/components/cards/education";
-import HobbiesCard from "@/components/cards/hobbies";
-import Introduction from "@/components/cards/introduction";
-import LanguagesCard from "@/components/cards/language";
-import Outro from "@/components/cards/outro";
-import Profile from "@/components/cards/profile";
-import Projects from "@/components/cards/projects";
-import StackCard from "@/components/cards/tech-stack";
+import Blogs from "@/components/cards/home/blogs/blogs";
+import CertificatesCard from "@/components/cards/home/certificates/certificates";
+import EducationCard from "@/components/cards/home/education/education";
+import HobbiesCard from "@/components/cards/home/hobbies";
+import Introduction from "@/components/cards/home/introduction";
+import LanguagesCard from "@/components/cards/home/language";
+import Outro from "@/components/cards/home/outro";
+import Profile from "@/components/cards/home/profile";
+import Projects from "@/components/cards/home/projects/projects";
+import StackCard from "@/components/cards/home/tech-stack";
 
 export default function () {
   return (
@@ -23,7 +23,7 @@ export default function () {
         <StackCard />
       </div>
       <EducationCard />
-        <CertificatesCard />
+      <CertificatesCard />
       <div className="flex md:flex-row flex-col justify-center gap-5 ">
         <HobbiesCard />
         <Outro />

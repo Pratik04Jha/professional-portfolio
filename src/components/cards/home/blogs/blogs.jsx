@@ -4,15 +4,16 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Button } from "../ui/button";
+} from "../../../ui/card";
+import { Button } from "../../../ui/button";
+import Link from "next/link";
 import GetPosts from "@/app/(routes)/blogs/page";
 
 export default function Blogs() {
   return (
     <Card className="bg-accent/10">
       <CardHeader>
-        <CardTitle>Blog posts</CardTitle>
+        <CardTitle>Featured Blogs</CardTitle>
         <CardDescription>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus
           et, at similique voluptates maxime magnam facilis, voluptate natus
@@ -20,10 +21,12 @@ export default function Blogs() {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
-        <GetPosts />
-        <Button variant="outline" className="py-6">
-          Real all blogs
-        </Button>
+        <GetPosts  />
+        <Link href="/blogs" className="w-full">
+          <Button variant="outline" className=" py-6 w-full">
+            Real all blogs
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );

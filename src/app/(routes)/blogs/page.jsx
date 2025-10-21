@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 const query = `
@@ -49,6 +50,12 @@ export default async function GetPosts() {
 
   return (
     <div className="flex flex-col gap-5  ">
+      {/* <Link href="/">
+        <Button variant="ghost" className="mb-6">
+          <ArrowLeft className="mr-2 h-4 w-4" />
+          Back to home
+        </Button>
+      </Link> */}
       {posts.map((items) => (
         <Card key={items.slug} className="bg-accent/10">
           <div className="flex gap-2 px-5 w-full ">

@@ -1,20 +1,19 @@
-import Image from "next/image";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
-import { ExternalLink } from "lucide-react";
+} from "../../../ui/card";
+import { Button } from "../../../ui/button";
+import { Badge } from "../../../ui/badge";
+import Link from "next/link";
 
 export default function ProjectCards({ items }) {
   return (
     <Card className="flex flex-col bg-accent/20">
       <CardHeader>
-        <Image
+        <img
           src={items.imgSrc}
           alt={items.title}
           height={100}
@@ -27,8 +26,7 @@ export default function ProjectCards({ items }) {
         </CardDescription>
       </CardHeader>
 
-      <CardContent>
-        <div className="flex flex-col gap-5">
+      <CardContent className="flex flex-col justify-between h-full gap-5">
           <div className="flex flex-col gap-2">
             <h1 className="font-semibold">Stack: </h1>
             <div className="flex gap-2 flex-wrap">
@@ -41,14 +39,17 @@ export default function ProjectCards({ items }) {
           </div>
 
           <div className="flex gap-3">
-            <Button className="font-semibold">
-              <ExternalLink /> <p className="pr-2">Visit</p>
-            </Button>
-            <Button className="font-semibold" variant="outline">
-              View details
-            </Button>
+            <Link href={`/projects/${items.slug}`} alt={items.slug}>
+              <Button className="font-semibold" variant="outline">
+                View details
+              </Button>
+            </Link>
+            <Link href={items.href} target="_blank" alt={items.slug}>
+              <Button className="font-semibold" variant="link">
+                Live demo
+              </Button>
+            </Link>
           </div>
-        </div>
       </CardContent>
     </Card>
   );

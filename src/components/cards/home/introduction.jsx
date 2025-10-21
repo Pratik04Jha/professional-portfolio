@@ -19,9 +19,10 @@ export default function Introduction() {
       <CardContent>
         I'm a self-taught programmer who creates <strong>websites</strong>,
         <strong> games</strong>, and <strong>apps</strong>. My favorite tech
-        stack for websites is <strong>Next.js</strong>, <strong>Supabase</strong>
-        , and <strong>shadcn UI</strong>, which helps me make my sites look
-        clean, consistent, and professional. I also work with
+        stack for websites is <strong>Next.js</strong>,{" "}
+        <strong>Supabase</strong>, and <strong>shadcn UI</strong>, which helps
+        me make my sites look clean, consistent, and professional. I also work
+        with
         <strong> AI SDKs</strong> and <strong>Appwrite</strong> for specific use
         cases. <br />
         <br /> I enjoy creating games for fun, especially 2D games, using the
@@ -42,4 +43,4 @@ export default function Introduction() {
       </CardContent>
     </Card>
   );
-};
+}
