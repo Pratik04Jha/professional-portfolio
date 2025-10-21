@@ -7,7 +7,7 @@ import {
 } from "../../../ui/card";
 import { Button } from "../../../ui/button";
 import Link from "next/link";
-import GetPosts from "@/app/(routes)/blogs/page";
+import GetPosts from "@/app/blogs/page";
 
 export default function Blogs() {
   return (

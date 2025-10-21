@@ -17,8 +17,8 @@ export default function EducationLevels({ education }) {
     <Card className="overflow-hidden flex flex-col md:flex-row md:px-5 items-center bg-accent/20">
       <div className="relative h-65 w-[90%] md:w-140 overflow-hidden bg-muted rounded-2xl">
         <Image
-          src={education.school.image}
-          alt={education.school.name}
+          src={education.image}
+          alt={education.name}
           height={100}
           width={100}
           className="w-full h-full object-cover pointer-events-none select-none"
@@ -28,7 +28,7 @@ export default function EducationLevels({ education }) {
             variant="secondary"
             className="backdrop-blur-sm bg-background/80"
           >
-            {education.school.type}
+            {education.type}
           </Badge>
         </div>
       </div>
@@ -37,17 +37,17 @@ export default function EducationLevels({ education }) {
         <CardHeader>
           <div className="space-y-1">
             <CardTitle className="text-2xl md:flex md:items-center md:gap-2">
-              {education.school.name}
+              {education.name}
               <Badge variant="outline" className="text-[10px] ">
-                {education.school.exam}
+                {education.exam}
               </Badge>
             </CardTitle>
             <CardDescription className="text-sm font-medium text-foreground/80">
-              {education.school.degree}
+              {education.degree}
             </CardDescription>
             <div className="flex gap-2 items-center ">
               <p className="text-sm font-medium text-foreground/80">
-                {education.school.year}
+                {education.year}
               </p>
             </div>
           </div>
@@ -55,13 +55,13 @@ export default function EducationLevels({ education }) {
 
         <CardContent className="space-y-4">
           <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-            {education.school.description}
+            {education.description}
           </p>
 
           <div>
             <h4 className="text-sm font-semibold mb-2">Key Subjects</h4>
             <div className="flex flex-wrap gap-2">
-              {education.school.subjects.map((subject) => (
+              {education.subjects.map((subject) => (
                 <Badge key={subject} variant="secondary" className="">
                   {subject}
                 </Badge>
@@ -70,12 +70,12 @@ export default function EducationLevels({ education }) {
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2">
-            <Link href="/education">
+            <Link href={`/education/${education.slug}`}>
               <Button variant="outline" className="font-semibold">
                 View details
               </Button>
             </Link>
-            <Link target="_blank" href={education.school.website}>
+            <Link target="_blank" href={education.website}>
               <Button className="font-semibold" variant="link">
                 School website
               </Button>

@@ -5,12 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { projectDetails } from "@/lib/constants/ProjectDetails";
 
-export async function generateStaticParams() {
-  return projectDetails.map((project) => ({
-    slug: project.slug,
-  }));
-}
-
 export default async function ProjectDetailsPage({ params }) {
   const { slug } = await params;
 

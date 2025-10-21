@@ -1,4 +1,3 @@
-import { Award, ExternalLink, Calendar, Hash } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -8,6 +7,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Certificates({ cert }) {
   return (
@@ -34,17 +34,30 @@ export default function Certificates({ cert }) {
           </div>
           <div className="flex  flex-col w-full text-sm">
             <p className="text-xs text-muted-foreground">Credential ID</p>
-            <p className="font-medium text-xs sm:text-sm">{cert.credentialId}</p>
+            <p className="font-medium text-xs sm:text-sm">
+              {cert.credentialId}
+            </p>
           </div>
         </div>
         <div className="flex items-center justify-start gap-2">
-          <Button variant="default" size="sm" className="text-xs font-semibold sm:text-sm">
-            View certificate
+          <Link href={`/certificates/${cert.credentialId}`}>
+            <Button
+              variant="outline"
+              size="sm"
+              className="text-xs font-semibold sm:text-sm"
+            >
+              View certificate
+            </Button>
+          </Link>
+          <Link href="/">
+          <Button
+            variant="link"
+            size="sm"
+            className="gap-2 text-xs font-semibold sm:text-sm"
+          >
+            Verify
           </Button>
-          <Button variant="outline" size="sm" className="gap-2 text-xs font-semibold sm:text-sm">
-            <ExternalLink className="w-4 h-4" />
-            Credential ID
-          </Button>
+          </Link>
         </div>
       </CardContent>
     </Card>

@@ -9,7 +9,7 @@ export const metadata = {
   description: "Portfolio of Pratik Jha who is a legend",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html lang="en">
       <head>
@@ -23,7 +23,10 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="my-21 mx-auto">{children}</main>
+          <main className="my-21 mx-auto">
+            {children}
+            {modal}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
