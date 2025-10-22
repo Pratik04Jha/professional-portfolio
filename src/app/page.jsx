@@ -11,7 +11,7 @@ import StackCard from "@/components/cards/home/tech-stack";
 
 export default function () {
   return (
-    <div className="flex flex-col gap-5 px-5 md:px-20">
+    <div className="flex flex-col gap-5 px-5 md:px-20 ">
       <div className="flex flex-col gap-5 md:flex-row md:justify-center md:gap-5 ">
         <Profile />
         <Introduction />

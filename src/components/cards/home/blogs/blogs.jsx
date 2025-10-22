@@ -8,6 +8,8 @@ import {
 import { Button } from "../../../ui/button";
 import Link from "next/link";
 import GetPosts from "@/app/blogs/page";
+import { Suspense } from "react";
+import BlogsCardSkeleton from "@/components/skeletons/blogs-card-skeleton";
 
 export default function Blogs() {
   return (
@@ -21,7 +23,17 @@ export default function Blogs() {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
+        
+        <Suspense fallback={
+        <div className="flex flex-col gap-5">
+          {[...Array(2)].map((_, i) => (
+            <BlogsCardSkeleton key={i} />
+          ))}
+        </div>
+      }>
+
         <GetPosts  />
+        </Suspense>
         <Link href="/blogs" className="w-full">
           <Button variant="outline" className=" py-6 w-full">
             Real all blogs
