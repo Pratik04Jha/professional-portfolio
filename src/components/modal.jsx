@@ -2,6 +2,11 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef } from 'react';
+import { Button } from './ui/button';
+import { Cross } from 'lucide-react';
+import { CrossIcon } from 'lucide-react';
+import { CrosshairIcon } from 'lucide-react';
+import { X } from 'lucide-react';
 
 export default function Modal({ children }) {
   const router = useRouter();
@@ -21,15 +26,16 @@ export default function Modal({ children }) {
     <dialog
       ref={dialogRef}
       onClose={onDismiss}
-      className="backdrop:bg-black/60 rounded-lg"
+      className="backdrop:bg-background/60 rounded-lg h-full flex items-center "
     >
-      <div className="relative">
-        <button
+      <div className="fixed p-20">
+        <Button
           onClick={onDismiss}
-          className="absolute top-2 right-2 text-xl"
+          variant="outline"
+          className="absolute top-25 right-25 max-w-10 max-h-10"
         >
-          ×
-        </button>
+          <X />
+        </Button>
         {children}
       </div>
     </dialog>

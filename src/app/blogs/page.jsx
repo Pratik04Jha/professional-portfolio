@@ -1,3 +1,4 @@
+import BlogsCardSkeleton from "@/components/skeletons/blogs-card-skeleton";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,6 +10,7 @@ import {
 import { formatDate } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const query = `
 query {
@@ -49,52 +51,48 @@ export default async function GetPosts() {
   const posts = data.data.publication.posts.edges.map((e) => e.node);
 
   return (
-    <div className="flex flex-col gap-5  ">
-      {/* <Link href="/">
-        <Button variant="ghost" className="mb-6">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to home
-        </Button>
-      </Link> */}
+    <div className="flex flex-col gap-5">
       {posts.map((items) => (
-        <Card key={items.slug} className="bg-accent/10">
-          <div className="flex gap-2 px-5 w-full ">
-            <img
-              src={items.coverImage.url}
-              alt={items.slug}
-              className="w-100 rounded-2xl pointer-events-none select-none"
-            />
+        <Suspense key={items.slug} fallback={<BlogsCardSkeleton />}>
+          <Card className="bg-accent/10">
+            <div className="flex gap-2 px-5 w-full ">
+              <img
+                src={items.coverImage.url}
+                alt={items.slug}
+                className="w-100 rounded-2xl pointer-events-none select-none"
+              />
 
-            <div className="flex flex-col gap-5">
-              <CardHeader>
-                <CardTitle className="text-2xl">{items.title}</CardTitle>
-                <CardDescription>{items.subtitle}</CardDescription>
-                <div className="flex gap-2 text-foreground/80">
-                  <div className="flex gap-2 items-center">
-                    <img
-                      src={items.author.profilePicture}
-                      className="w-6 rounded-full"
-                    />{" "}
-                    <p className="text-foreground">{items.author.name}</p>
+              <div className="flex flex-col gap-5">
+                <CardHeader>
+                  <CardTitle className="text-2xl">{items.title}</CardTitle>
+                  <CardDescription>{items.subtitle}</CardDescription>
+                  <div className="flex gap-2 text-foreground/80">
+                    <div className="flex gap-2 items-center">
+                      <img
+                        src={items.author.profilePicture}
+                        className="w-6 rounded-full"
+                      />{" "}
+                      <p className="text-foreground">{items.author.name}</p>
+                    </div>
+                    <p>•</p>
+                    <p>{formatDate(items.publishedAt)}</p>
                   </div>
-                  <p>•</p>
-                  <p>{formatDate(items.publishedAt)}</p>
-                </div>
-              </CardHeader>
-              <CardContent className="flex flex-col justify-between h-full">
-                <p>{items.brief}</p>
-                <div className="flex gap-2">
-                  <Link href={`/blogs/posts/${items.id}`}>
-                    <Button>Read</Button>
-                  </Link>
-                  <Link href={items.url} target="_blank">
-                    <Button variant="outline">Read on hashnode</Button>
-                  </Link>
-                </div>
-              </CardContent>
+                </CardHeader>
+                <CardContent className="flex flex-col justify-between h-full">
+                  <p>{items.brief}</p>
+                  <div className="flex gap-2">
+                    <Link href={`/blogs/posts/${items.id}`}>
+                      <Button>Read</Button>
+                    </Link>
+                    <Link href={items.url} target="_blank">
+                      <Button variant="outline">Read on hashnode</Button>
+                    </Link>
+                  </div>
+                </CardContent>
+              </div>
             </div>
-          </div>
-        </Card>
+          </Card>
+        </Suspense>
       ))}
     </div>
   );

@@ -14,13 +14,13 @@ export default function Certificates({ cert }) {
     <Card className="overflow-hidden md:w-105 bg-accent/20 flex-shrink-0">
       <CardHeader>
         <Image
-          src={cert.image}
+          src={cert.imgSrc}
           alt={cert.title}
-          width={100}
+          width={1000}
           height={100}
           className="object-cover object-center w-full rounded-2xl select-none pointer-events-none"
         />
-        <CardTitle className="text-xl sm:text-2xl">{cert.title}</CardTitle>
+        <CardTitle className="text-xl">{cert.title}</CardTitle>
         <CardDescription className="text-xs sm:text-sm line-clamp-3">
           {cert.description}
         </CardDescription>

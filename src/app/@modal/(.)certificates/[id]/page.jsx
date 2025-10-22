@@ -1,5 +1,5 @@
+import CertificateDetails from "@/components/cards/home/certificates/CertificateDetails";
 import Modal from "@/components/modal";
-import { Card } from "@/components/ui/card";
 import { certificatesData } from "@/lib/constants/CertificatesData";
 
 export default async function CertificatesDetailModal({ params }) {
@@ -9,7 +9,7 @@ export default async function CertificatesDetailModal({ params }) {
 
   return (
     <Modal>
-      <Card className="fixed top-10 left-10">{certifications.title}</Card>
+        <CertificateDetails certifications={certifications} />
     </Modal>
   );
 }
