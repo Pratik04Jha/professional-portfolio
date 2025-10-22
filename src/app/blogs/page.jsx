@@ -8,9 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
-import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Suspense } from "react";
 
 
 export const revalidate = 3600;

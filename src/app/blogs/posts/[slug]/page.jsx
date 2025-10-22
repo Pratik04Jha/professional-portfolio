@@ -1,34 +1,38 @@
 import { formatDate } from "@/lib/utils";
 import { BookOpenTextIcon } from "lucide-react";
 
+
+export const revalidate = 3600;
+
+const query = `
+  query GetPost($id: ID!) {
+    post(id: $id) {
+      title
+      subtitle
+      coverImage {
+        url
+      }
+      author {
+        name
+        profilePicture
+      }
+      readTimeInMinutes
+      publishedAt
+      content {
+        html
+        markdown
+      }
+    }
+  }
+`;
+
 export default async function GetBlogs({ params }) {
   const { slug } = await params;
 
-  const query = `
-    query GetPost($id: ID!) {
-      post(id: $id) {
-        title
-        subtitle
-        coverImage {
-          url
-        }
-        author {
-          name
-          profilePicture
-        }
-        readTimeInMinutes
-        publishedAt
-        content {
-          html
-          markdown
-        }
-      }
-    }
-  `;
+
 
   const res = await fetch("https://gql.hashnode.com", {
     method: "POST",
-    cache: "no-store",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ 
       query,
