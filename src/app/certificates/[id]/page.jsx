@@ -9,9 +9,8 @@ export default async function CertificatesDetailPage({ params }) {
 
   return (
     <div className="px-20">
-<BackButton />
+      <BackButton />
       <CertificateDetails certifications={certifications} />
     </div>
-  
   );
 }
