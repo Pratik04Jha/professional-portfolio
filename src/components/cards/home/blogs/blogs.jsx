@@ -7,7 +7,7 @@ import {
 } from "../../../ui/card";
 import { Button } from "../../../ui/button";
 import Link from "next/link";
-import GetPosts from "@/app/blogs/page";
+import GetPosts from "@/app/blogs/getPosts";
 import { Suspense } from "react";
 import BlogsCardSkeleton from "@/components/skeletons/blogs-card-skeleton";
 

@@ -11,7 +11,20 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Gitlab, Mail, MapPin, Send, Slack } from "lucide-react";
+import { Instagram } from "lucide-react";
+import { Twitter } from "lucide-react";
+import { X } from "lucide-react";
+import { Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
+import { Facebook } from "lucide-react";
+import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import BackButton from "@/components/ui/back-button";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -22,14 +35,29 @@ export default function ContactSection() {
   });
   const [status, setStatus] = useState("");
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     setStatus("sending");
 
-    setTimeout(() => {
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setStatus(""), 3000);
-    }, 1500);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus(""), 3000);
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("error");
+    }
   };
 
   const handleChange = (e) => {
@@ -40,8 +68,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="w-full max-h-screen px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full px-20">
+      <BackButton />
+      <div className=" mx-auto">
         <Card className="">
           <CardHeader>
             <CardTitle>Get in touch</CardTitle>
@@ -124,11 +153,12 @@ export default function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* Contact Info */}
             <div className="space-y-6">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Contact Information</CardTitle>
+                  <CardTitle className="text-2xl">
+                    Contact Information
+                  </CardTitle>
                   <CardDescription>
                     You can also reach me through these channels.
                   </CardDescription>
@@ -154,6 +184,52 @@ export default function ContactSection() {
                       <p className="opacity-80">New Delhi, Delhi, India</p>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="flex justify-between">
+                  {[
+                    {
+                      icon: <Instagram size={30} />,
+                      toopTipText: "Instagram",
+                      href: "https://instagram.com/pratikthejha",
+                    },
+                    {
+                      icon: <Facebook size={30} />,
+                      toopTipText: "Facebook",
+                      href: "https://facebook.com/pratikthejha",
+                    },
+                    {
+                      icon: <Linkedin size={30} />,
+                      toopTipText: "Linkedin",
+                      href: "https://linkedin.com/in/pratikthejha",
+                    },
+                    {
+                      icon: <Twitter size={30} />,
+                      toopTipText: "Twitter",
+                      href: "https://x.com/gravitonion",
+                    },
+                    {
+                      icon: <Github size={30} />,
+                      toopTipText: "GitHub",
+                      href: "https://github.com/pratik04jha",
+                    },{
+                      icon: <Gitlab size={30} />,
+                      toopTipText: "Gitlab",
+                      href: "https://github.com/pratik04jha",
+                    },
+                  ].map((items, index) => (
+                    <Tooltip key={index}>
+                      <TooltipTrigger>
+                        <Link target="_blank" href={items.href}>
+                          <Card className="p-5">{items.icon}</Card>
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>{items.toopTipText}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  ))}
                 </CardContent>
               </Card>
             </div>

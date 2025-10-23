@@ -20,6 +20,7 @@ import {
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+import BackButton from "@/components/ui/back-button";
 
 export default async function Education({ params }) {
   const { slug } = await params;
@@ -28,12 +29,7 @@ export default async function Education({ params }) {
 
   return (
     <div className="container mx-auto px-4 py-12 max-w-4xl">
-      <Link href="/">
-        <Button variant="ghost" className="mb-6">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to home
-        </Button>
-      </Link>
+      <BackButton />
       <div className="mb-8 flex flex-col gap-2 justify-center items-end">
         <div className="relative w-full h-64 md:h-96 overflow-hidden rounded-lg ">
           <img

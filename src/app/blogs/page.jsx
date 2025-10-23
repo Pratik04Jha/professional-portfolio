@@ -1,5 +1,5 @@
-import BlogsCardSkeleton from "@/components/skeletons/blogs-card-skeleton";
-import { Button } from "@/components/ui/button";
+import BackButton from "@/components/ui/back-button";
+import GetPosts from "./getPosts";
 import {
   Card,
   CardContent,
@@ -7,92 +7,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { formatDate } from "@/lib/utils";
-import Link from "next/link";
 
-
-export const revalidate = 3600;
-
-
-const query = `
-query {
-  publication(host: "pratikjha.hashnode.dev") {
-    posts(first: 5) {
-      edges {
-        node {
-          id
-          title
-          subtitle
-          slug
-          brief
-          url
-          publishedAt
-          author {
-            name
-            profilePicture
-          }
-          coverImage {
-            url
-          }
-        }
-      }
-    }
-  }
-}
-`;
-
-export default async function GetPosts() {
-  const res = await fetch("https://gql.hashnode.com", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query }),
-  });
-
-  const data = await res.json();
-  const posts = data.data.publication.posts.edges.map((e) => e.node);
-
+export default async function RenderPosts() {
   return (
-    <div className="flex flex-col gap-5">
-      {posts.map((items) => (
-        <Card className="bg-accent/10">
-          <div className="flex gap-2 px-5 w-full ">
-            <img
-              src={items.coverImage.url}
-              alt={items.slug}
-              className="w-100 rounded-2xl pointer-events-none select-none"
-            />
-
-            <div className="flex flex-col gap-5">
-              <CardHeader>
-                <CardTitle className="text-2xl">{items.title}</CardTitle>
-                <CardDescription>{items.subtitle}</CardDescription>
-                <div className="flex gap-2 text-foreground/80">
-                  <div className="flex gap-2 items-center">
-                    <img
-                      src={items.author.profilePicture}
-                      className="w-6 rounded-full"
-                    />{" "}
-                    <p className="text-foreground">{items.author.name}</p>
-                  </div>
-                  <p>•</p>
-                  <p>{formatDate(items.publishedAt)}</p>
-                </div>
-              </CardHeader>
-              <CardContent className="flex flex-col justify-between h-full">
-                <p>{items.brief}</p>
-                <div className="flex gap-2">
-                  <Link href={`/blogs/posts/${items.id}`}>
-                    <Button>Read</Button>
-                  </Link>
-                  <Link href={items.url} target="_blank">
-                    <Button variant="outline">Read on hashnode</Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </div>
-          </div>
-        </Card>
-      ))}
+    <div className="px-20">
+      <BackButton />
+      <Card>
+        <CardHeader>
+          <CardTitle>All blogs</CardTitle>
+          <CardDescription>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Harum
+            deserunt, soluta eveniet quod repellendus, autem deleniti facilis
+            nobis fuga possimus voluptas?
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <GetPosts />
+        </CardContent>
+      </Card>
     </div>
   );
 }

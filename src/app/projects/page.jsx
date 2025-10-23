@@ -6,21 +6,14 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { projectDetails } from "@/lib/constants/ProjectDetails";
-import { ArrowLeft } from "lucide-react";
 import ProjectCards from "@/components/cards/home/projects/project-cards";
+import BackButton from "@/components/ui/back-button";
 
 const page = () => {
   return (
     <div className=" px-20">
-      <Link href="/">
-        <Button variant="ghost" className="mb-6">
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to home
-        </Button>
-      </Link>
+      <BackButton />
       <Card className="bg-accent/10">
         <CardHeader>
           <CardTitle>All projects</CardTitle>
