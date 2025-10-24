@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -122,74 +121,153 @@
   }
 }
 
-::selection{
-  background: #47A3F3;
+::selection {
+  background: #47a3f3;
   color: #ffffff;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
 
 @layer components {
   .blog-content {
-    @apply  leading-relaxed;
+    @apply leading-relaxed;
   }
-  
+
   .blog-content h1 {
     @apply text-4xl font-bold mt-8 mb-4;
   }
-  
+
   .blog-content h2 {
     @apply text-3xl font-bold mt-8 mb-4;
   }
-  
+
   .blog-content h3 {
     @apply text-2xl font-bold mt-6 mb-3;
   }
-  
+
   .blog-content p {
     @apply mb-4 text-lg;
   }
-  
-  .blog-content ul, .blog-content ol {
+
+  .blog-content ul,
+  .blog-content ol {
     @apply mb-4 pl-6 space-y-2;
   }
-  
+
   .blog-content ul {
     @apply list-disc;
   }
-  
+
   .blog-content ol {
     @apply list-decimal;
   }
-  
+
   .blog-content a {
     @apply text-[#47A3F3];
   }
-  
+
   .blog-content img {
     @apply rounded-lg my-6;
   }
-  
+
   .blog-content code {
     @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
   }
-  
+
   .blog-content pre {
-    @apply  text-white p-4 rounded-lg overflow-x-auto mb-4;
+    @apply text-white p-4 rounded-lg overflow-x-auto mb-4;
   }
-  
+
   .blog-content pre code {
     @apply bg-transparent p-0;
   }
-  
+
   .blog-content blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4 ;
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
   }
 
   .blog-content hr {
     @apply border-white/50 my-10;
   }
+
+  .project-content {
+    @apply leading-relaxed;
+  }
+
+  .project-content h1 {
+    @apply text-4xl font-bold mt-8 mb-4;
+  }
+
+  .project-content h2 {
+    @apply text-3xl font-bold mt-8 mb-4;
+  }
+
+  .project-content h3 {
+    @apply text-2xl font-bold mt-6 mb-3;
+  }
+
+  .project-content h4 {
+    @apply text-lg font-bold text-foreground/95;
+  }
+
+  .project-content p {
+    @apply mt-2 mb-4 text-base text-foreground/80;
+  }
+
+  .project-content ul,
+  .project-content ol {
+    @apply mb-4 pl-6 space-y-2;
+  }
+
+  .project-content ul {
+    @apply list-disc;
+  }
+
+  .project-content ol {
+    @apply list-decimal;
+  }
+
+  .project-content a {
+    @apply text-[#47A3F3];
+  }
+
+  .project-content img {
+    @apply rounded-lg my-6;
+  }
+
+  .project-content code {
+    @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+  }
+
+  .project-content pre {
+    @apply text-white p-4 rounded-lg overflow-x-auto mb-4;
+  }
+
+  .project-content pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .project-content blockquote {
+    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+  }
+
+  .project-content hr {
+    @apply border-white/50 my-10;
+  }
+
+  .project-content table {
+    @apply w-full border-collapse my-6;
+  }
+
+  .project-content th {
+    @apply border px-4 py-3 text-left font-semibold;
+  }
+
+  .project-content td {
+    @apply border px-4 py-3 text-foreground/80;
+  }
+
 }

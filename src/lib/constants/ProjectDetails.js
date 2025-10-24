@@ -1,13 +1,207 @@
 export const projectDetails = [
+  // Featured projects
+
   {
-    imgSrc:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
+    imgSrc: "/website_img/under_construction_dark_img.png",
+    title: "Graviton | Your AI-Powered Creative Command Center",
+    description:
+      "An intelligent platform that adapts to your needs—chat with advanced AI, generate professional media, create custom personas, and unlock limitless possibilities.",
+    fullDescription: `
+      <div>
+        <p>
+          Graviton redefines how you interact with AI. A unified platform that combines conversational intelligence, 
+          media generation, and community-driven personas into one seamless experience.
+        </p>
+
+        <section>
+          <h3>Three Modes, Infinite Possibilities</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Mode</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Agentic Mode</strong></td>
+                <td>
+                  Tackles complex challenges—from advanced coding problems to strategic planning. 
+                  Breaks down intricate tasks and delivers production-ready solutions with step-by-step reasoning.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Adaptive Mode</strong></td>
+                <td>
+                  Learns from your conversation patterns, delivering instant, contextually relevant answers 
+                  that evolve with each interaction. Built for speed without sacrificing intelligence.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Chat Mode</strong></td>
+                <td>
+                  Handles everyday queries with natural, conversational intelligence—your go-to companion 
+                  for quick insights, brainstorming, and daily assistance.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3>Multimodal Intelligence</h3>
+          <p>
+            Upload and analyze <strong>images, videos, and PDFs</strong>. Graviton doesn't just read your files—it 
+            understands them, extracting insights, answering questions, and making connections across any format. 
+            Perfect for research, content analysis, and document processing.
+          </p>
+        </section>
+
+        <section>
+          <h3>Professional Media Generation</h3>
+          <p>
+            Transform ideas into reality with our comprehensive media suite:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Media Type</th>
+                <th>Capabilities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Images</strong></td>
+                <td>Generate stunning visuals from text descriptions</td>
+              </tr>
+              <tr>
+                <td><strong>Videos</strong></td>
+                <td>Create professional video content with AI assistance</td>
+              </tr>
+              <tr>
+                <td><strong>Presentations</strong></td>
+                <td>Build polished slide decks in minutes</td>
+              </tr>
+              <tr>
+                <td><strong>Spreadsheets</strong></td>
+                <td>Generate data tables and analysis documents</td>
+              </tr>
+              <tr>
+                <td><strong>Documents</strong></td>
+                <td>Create reports, diagrams, and custom file formats</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h3>Persona Ecosystem</h3>
+          <p>
+            Dive into a vibrant community of AI personalities. Chat with pre-built personas ranging from 
+            <strong>creative writers to technical experts, business advisors to language tutors</strong>. 
+            Or architect your own custom AI character with unique traits, knowledge domains, and conversation styles.
+          </p>
+          <p>
+            Share your creations with the community, discover what others have built, and find the perfect 
+            AI companion for any task or conversation.
+          </p>
+        </section>
+
+        <section>
+          <h3>Intelligent Organization</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Smart History</strong></td>
+                <td>
+                  Every conversation is automatically saved and searchable. Create folders, rename chats, 
+                  tag important discussions, and never lose context. Advanced search lets you find any 
+                  conversation in seconds.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Media Library</strong></td>
+                <td>
+                  Automatically organizes every image, video, and file—whether generated by AI or uploaded by you. 
+                  Smart categorization, instant retrieval, and powerful filters make managing your media effortless.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <footer>
+          <p>
+            Built for creators, developers, and thinkers who demand more from their AI tools.
+          </p>
+        </footer>
+      </div>
+    `,
+    stack: ["NextJS", "Supabase", "ShadCN-UI", "AI-SDK"],
+    href: "/",
+    githubUrl: "https://github.com/pratik04jha",
+    liveUrl: "/",
+    slug: "artificial-intelligence",
+    features: `<table>
+            
+            <tbody>
+              <tr>
+                <td>
+                  Multimodal File Analysis
+                </td><td>
+                  Multi-Mode AI Chat
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Media Generation
+                </td>
+                <td>
+                  Custom Persona Creator
+                </td>
+              </tr><tr>
+                <td>
+                  Media Generation
+                </td>
+                <td>
+                  Community Marketplace
+                </td>
+              </tr>
+            </tbody>
+          </table>`,
+
+    // [
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   ""
+    // ]
+    technologies: {
+      frontend: ["Next.js 14", "ShadCN UI", "AI SDK", "TypeScript"],
+      backend: ["Next.js API Routes", "Supabase", "PostgreSQL"],
+      deployment: ["Vercel"],
+      ai: ["OpenAI GPT-4", "Stable Diffusion", "Multi-modal AI Models"],
+    },
+    year: "2026",
+    category: "Artificial Intelligence Platform",
+    featured: true,
+  },
+  {
+    imgSrc: "/website_img/under_construction_dark_img.png",
     title: "ZeniusVerse | The ultimate AI universe",
     description:
       "A comprehensive AI platform bringing together multiple AI models in one unified interface with real-time streaming responses and persistent chat history.",
     stack: ["nextjs", "ai-sdk", "supabase", "shad-cn-ui"],
     href: "https://artificial-intelligence-beta.vercel.app/",
-    slug: "artificial-intelligence",
+    slug: "artificiallllll-intelligence",
 
     fullDescription: `
       ZeniusVerse is a comprehensive AI platform that brings together multiple AI capabilities 
@@ -39,15 +233,60 @@ export const projectDetails = [
       "Chat history",
       "Media generation",
     ],
-    technologies: {
-      frontend: ["Next.js", "React", "Tailwind CSS", "Shadcn UI"],
-      backend: ["Supabase", "AI SDK"],
-      deployment: ["Vercel"],
-    },
     year: "2024",
     category: "Web Application",
     featured: true,
   },
+  {
+    imgSrc: "/website_img/under_construction_dark_img.png",
+    title: "Commertia | Buy anything",
+    description:
+      "A no-code portfolio builder specifically designed for developers, featuring project showcases, blog integration, and custom domains.",
+    fullDescription: `
+      PortfolioCraft empowers developers to create stunning portfolios without writing code, 
+      while maintaining full customization capabilities for those who want more control.
+      
+      ## Key Features
+      - Drag-and-drop portfolio builder
+      - GitHub integration for projects
+      - Built-in blog with MDX support
+      - Custom domain support
+      - SEO optimization tools
+      
+      ## Technical Highlights
+      - Built with Next.js and TypeScript
+      - MDX for blog content
+      - Cloudflare for CDN and DNS
+      - GitHub API integration
+      
+      ## Challenges & Solutions
+      Created a flexible theming system that allows users to customize every aspect of their 
+      portfolio while maintaining responsive design principles across all templates.
+    `,
+    stack: ["nextjs", "typescript", "mdx", "cloudflare"],
+    href: "https://portfoliocraft.io/",
+    githubUrl: "https://github.com/yourusername/portfoliocraft",
+    liveUrl: "https://portfoliocraft.io/",
+    slug: "portfoliocraft",
+    features: [
+      "No-code builder",
+      "GitHub integration",
+      "Blog with MDX",
+      "Custom domains",
+      "SEO tools",
+    ],
+    technologies: {
+      frontend: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
+      backend: ["Supabase", "GitHub API", "Cloudflare"],
+      deployment: ["Vercel", "Cloudflare"],
+    },
+    year: "2024",
+    category: "Developer Tools",
+    featured: true,
+  },
+
+  // More projects
+
   {
     imgSrc:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
@@ -98,53 +337,6 @@ export const projectDetails = [
   {
     imgSrc:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
-    title: "Automate social media posting with AI",
-    description:
-      "An intuitive project management tool featuring kanban boards, time tracking, team collaboration, and real-time updates for agile teams.",
-    fullDescription: `
-      TaskMaster Pro streamlines project workflows with powerful collaboration features and 
-      real-time synchronization across teams.
-      
-      ## Key Features
-      - Drag-and-drop kanban boards
-      - Time tracking and reporting
-      - Real-time collaboration
-      - Sprint planning tools
-      - Custom workflows
-      
-      ## Technical Highlights
-      - Built with Next.js and React
-      - WebSocket integration for real-time updates
-      - MongoDB for flexible data storage
-      - Chart.js for data visualization
-      
-      ## Challenges & Solutions
-      Implemented conflict resolution for simultaneous edits using operational transformation
-      algorithms, ensuring data consistency across all connected clients.
-    `,
-    stack: ["nextjs", "mongodb", "websocket", "chart-js"],
-    href: "https://taskmaster-pro.vercel.app/",
-    githubUrl: "https://github.com/yourusername/taskmaster",
-    liveUrl: "https://taskmaster-pro.vercel.app/",
-    slug: "taskmaster-pro",
-    features: [
-      "Kanban boards",
-      "Time tracking",
-      "Real-time sync",
-      "Sprint planning",
-      "Team collaboration",
-    ],
-    technologies: {
-      frontend: ["Next.js", "React", "Tailwind CSS", "Chart.js"],
-      backend: ["MongoDB", "WebSocket", "Node.js"],
-      deployment: ["Vercel"],
-    },
-    year: "2024",
-    category: "Productivity",
-    featured: true,
-  },
-  {
-    imgSrc: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
     title: "Readanore | Blogs website for the web",
     description:
       "A comprehensive fitness tracking app with AI-powered workout recommendations, nutrition planning, and progress visualization.",
@@ -189,54 +381,7 @@ export const projectDetails = [
     year: "2024",
     category: "Health & Fitness",
   },
-  {
-    imgSrc:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",
-    title: "Commertia | Buy anything",
-    description:
-      "A no-code portfolio builder specifically designed for developers, featuring project showcases, blog integration, and custom domains.",
-    fullDescription: `
-      PortfolioCraft empowers developers to create stunning portfolios without writing code, 
-      while maintaining full customization capabilities for those who want more control.
-      
-      ## Key Features
-      - Drag-and-drop portfolio builder
-      - GitHub integration for projects
-      - Built-in blog with MDX support
-      - Custom domain support
-      - SEO optimization tools
-      
-      ## Technical Highlights
-      - Built with Next.js and TypeScript
-      - MDX for blog content
-      - Cloudflare for CDN and DNS
-      - GitHub API integration
-      
-      ## Challenges & Solutions
-      Created a flexible theming system that allows users to customize every aspect of their 
-      portfolio while maintaining responsive design principles across all templates.
-    `,
-    stack: ["nextjs", "typescript", "mdx", "cloudflare"],
-    href: "https://portfoliocraft.io/",
-    githubUrl: "https://github.com/yourusername/portfoliocraft",
-    liveUrl: "https://portfoliocraft.io/",
-    slug: "portfoliocraft",
-    features: [
-      "No-code builder",
-      "GitHub integration",
-      "Blog with MDX",
-      "Custom domains",
-      "SEO tools",
-    ],
-    technologies: {
-      frontend: ["Next.js", "TypeScript", "Tailwind CSS", "MDX"],
-      backend: ["Supabase", "GitHub API", "Cloudflare"],
-      deployment: ["Vercel", "Cloudflare"],
-    },
-    year: "2024",
-    category: "Developer Tools",
-    featured: true,
-  },
+
   {
     imgSrc:
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800",

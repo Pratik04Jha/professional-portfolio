@@ -15,7 +15,7 @@ export default function Blogs() {
   return (
     <Card className="bg-accent/10">
       <CardHeader>
-        <CardTitle>Featured Blogs</CardTitle>
+        <CardTitle>Recent blogs</CardTitle>
         <CardDescription>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab delectus
           et, at similique voluptates maxime magnam facilis, voluptate natus
@@ -23,17 +23,7 @@ export default function Blogs() {
         </CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-5">
-        
-        <Suspense fallback={
-        <div className="flex flex-col gap-5">
-          {[...Array(2)].map((_, i) => (
-            <BlogsCardSkeleton key={i} />
-          ))}
-        </div>
-      }>
-
-        <GetPosts  />
-        </Suspense>
+        <GetPosts limit={3}  />
         <Link href="/blogs" className="w-full">
           <Button variant="outline" className=" py-6 w-full">
             Real all blogs

@@ -1,5 +1,6 @@
 import { formatDate } from "@/lib/utils";
 import { BookOpenTextIcon } from "lucide-react";
+import Image from "next/image";
 
 
 export const revalidate = 3600;
@@ -47,8 +48,10 @@ export default async function GetBlogs({ params }) {
 
   return (
     <div className="prose mx-auto px-30 flex flex-col justify-center w-full">
-      <img
+      <Image
         src={post.coverImage?.url}
+        width={10000}
+        height={10000}
         alt={post.title}
         className="rounded-2xl mb-4 pointer-events-none select-none"
       />

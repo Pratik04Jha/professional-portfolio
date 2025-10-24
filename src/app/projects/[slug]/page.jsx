@@ -75,43 +75,22 @@ export default async function ProjectDetailsPage({ params }) {
         {project.features && (
           <div className="space-y-3">
             <h2 className="text-2xl font-semibold">Key Features</h2>
-            <ul className="grid md:grid-cols-2 gap-3">
-              {project.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center gap-2">
-                  <p className="text-primary mt-1">•</p>
-                  <p>{feature}</p>
-                </li>
-              ))}
-            </ul>
+            <div className="prose prose-invert project-content  " dangerouslySetInnerHTML={{ __html: project.features }}>
+              
+            </div>
           </div>
         )}
 
         {project.fullDescription && (
           <div className="">
             <h2 className="text-2xl font-semibold">About This Project</h2>
-            <div className="prose prose-invert  whitespace-pre-line">
-              {project.fullDescription}
+            <div className="prose prose-invert project-content  " dangerouslySetInnerHTML={{ __html: project.fullDescription }}>
+              
             </div>
           </div>
         )}
 
-        {project.technologies && (
-          <div className="space-y-3">
-            <h2 className="text-2xl font-semibold">Technologies Used</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {Object.entries(project.technologies).map(([category, techs]) => (
-                <div key={category} className="space-y-2">
-                  <h3 className="font-semibold capitalize">{category}</h3>
-                  <ul className="space-y-1 text-foreground/80">
-                    {techs.map((tech, idx) => (
-                      <li key={idx}>• {tech}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+        
       </div>
     </div>
   );

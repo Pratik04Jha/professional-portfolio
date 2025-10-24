@@ -8,6 +8,11 @@ import {
 import { Button } from "../../../ui/button";
 import { Badge } from "../../../ui/badge";
 import Link from "next/link";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function ProjectCards({ items }) {
   return (
@@ -18,7 +23,7 @@ export default function ProjectCards({ items }) {
           alt={items.title}
           height={100}
           width={100}
-          className="w-full rounded-2xl object-cover object-center pointer-events-none select-none border border-[#292A2A]"
+          className="w-full rounded-2xl object-cover object-center pointer-events-none select-none  "
         />
         <CardTitle className="text-lg font-semibold">{items.title}</CardTitle>
         <CardDescription className="text-sm text-foreground/90 line-clamp-4">
@@ -27,29 +32,44 @@ export default function ProjectCards({ items }) {
       </CardHeader>
 
       <CardContent className="flex flex-col justify-between h-full gap-5">
-          <div className="flex flex-col gap-2">
-            <h1 className="font-semibold">Stack: </h1>
-            <div className="flex gap-2 flex-wrap">
-              {items.stack.map((itm, idx) => (
-                <Badge key={idx} variant="outline" className="px-4 py-1">
-                  {itm}
-                </Badge>
-              ))}
-            </div>
+        <div className="flex flex-col gap-2">
+          <h1 className="font-semibold">Stack: </h1>
+          <div className="flex gap-2 flex-wrap">
+            {items.stack.map((itm, idx) => (
+              <Badge key={idx} variant="outline" className="px-4 py-1">
+                {itm}
+              </Badge>
+            ))}
           </div>
+        </div>
 
-          <div className="flex gap-3">
-            <Link href={`/projects/${items.slug}`} alt={items.slug}>
-              <Button className="font-semibold" variant="outline">
-                View details
-              </Button>
-            </Link>
-            <Link href={items.href} target="_blank" alt={items.slug}>
-              <Button className="font-semibold" variant="link">
-                Live demo
-              </Button>
-            </Link>
-          </div>
+        <div className="flex gap-3">
+          <Link href={`/projects/${items.slug}`} alt={items.slug}>
+            <Button className="font-semibold" variant="outline">
+              View details
+            </Button>
+          </Link>
+          <Tooltip>
+            <TooltipTrigger>
+              <Link
+                href={items.href}
+                className="cursor-not-allowed "
+                target="_blank"
+                alt={items.slug}
+              >
+                <Button
+                  className="font-semibold cursor-not-allowed "
+                  variant="link"
+                >
+                  Live demo
+                </Button>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Coming soon...</p>
+            </TooltipContent>
+          </Tooltip>
+        </div>
       </CardContent>
     </Card>
   );

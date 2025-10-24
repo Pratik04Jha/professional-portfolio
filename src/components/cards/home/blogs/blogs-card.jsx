@@ -7,16 +7,19 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 
 const BlogsCardSection = ({ items }) => {
   return (
     <Card className="bg-accent/10">
       <div className="flex gap-2 px-5 w-full ">
-        <img
+        <Image
           src={items.coverImage.url}
+          width={1000}
+          height={1000}
           alt={items.slug}
-          className="w-100 rounded-2xl pointer-events-none select-none"
+          className="max-w-100 rounded-2xl pointer-events-none select-none"
         />
 
         <div className="flex flex-col gap-5">
@@ -25,10 +28,13 @@ const BlogsCardSection = ({ items }) => {
             <CardDescription>{items.subtitle}</CardDescription>
             <div className="flex gap-2 text-foreground/80">
               <div className="flex gap-2 items-center">
-                <img
+                <Image
                   src={items.author.profilePicture}
-                  className="w-6 rounded-full"
-                />{" "}
+                  width={50}
+                  height={50}
+                  alt=""
+                  className="w-6 rounded-full pointer-events-none select-none "
+                />
                 <p className="text-foreground">{items.author.name}</p>
               </div>
               <p>•</p>

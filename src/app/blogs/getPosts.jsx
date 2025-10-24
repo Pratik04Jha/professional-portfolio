@@ -2,34 +2,34 @@ import BlogsCardSection from "@/components/cards/home/blogs/blogs-card";
 
 export const revalidate = 3600;
 
-const query = `
-query {
-  publication(host: "pratikjha.hashnode.dev") {
-    posts(first: 5) {
-      edges {
-        node {
-          id
-          title
-          subtitle
-          slug
-          brief
-          url
-          publishedAt
-          author {
-            name
-            profilePicture
-          }
-          coverImage {
+
+export default async function GetPosts({limit}) {
+  const query = `
+  query {
+    publication(host: "pratikjha.hashnode.dev") {
+      posts(first: ${limit || 10}) {
+        edges {
+          node {
+            id
+            title
+            subtitle
+            slug
+            brief
             url
+            publishedAt
+            author {
+              name
+              profilePicture
+            }
+            coverImage {
+              url
+            }
           }
         }
       }
     }
   }
-}
-`;
-
-export default async function GetPosts() {
+  `;
   const res = await fetch("https://gql.hashnode.com", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
