@@ -37,7 +37,7 @@ export default function Navbar() {
       </NavigationMenu>
       <div className="flex items-center gap-5">
         <ModeToggle />
-        <Button className="font-semibold">Resume</Button>
+        <Button variant="outline" className="font-semibold">Blueprint</Button>
       </div>
     </nav>
   );
