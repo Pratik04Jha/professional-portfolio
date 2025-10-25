@@ -10,7 +10,7 @@ import {
 import { certificatesData } from "@/lib/constants/CertificatesData";
 import React from "react";
 
-const CertificatesPage = () => {
+export default function Page () {
   return (
     <div className="px-20">
       <BackButton />
@@ -33,4 +33,3 @@ const CertificatesPage = () => {
   );
 };
 
-export default CertificatesPage;
