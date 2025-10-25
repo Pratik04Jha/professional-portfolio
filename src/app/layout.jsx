@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import Footer from "@/components/footer";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Pratik Jha | Portfolio",
@@ -26,6 +27,7 @@ export default function RootLayout({ children, modal }) {
           <main className="my-21 mx-auto">
             {children}
             {modal}
+            <Analytics />
           </main>
           <Footer />
         </ThemeProvider>

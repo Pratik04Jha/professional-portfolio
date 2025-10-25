@@ -19,7 +19,7 @@ export default function EducationLevels({ education }) {
           src={education.imgSrc}
           alt={education.title}
           height={100}
-          width={1000}
+          width={500}
           className="w-full h-full object-cover pointer-events-none select-none"
         />
         <div className="absolute top-3 right-3">
