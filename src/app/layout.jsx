@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { GeistSans } from "geist/font/sans";
 import Footer from "@/components/footer";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata = {
   title: "Pratik Jha | Portfolio",
@@ -28,6 +29,7 @@ export default function RootLayout({ children, modal }) {
             {children}
             {modal}
             <Analytics />
+            <SpeedInsights />
           </main>
           <Footer />
         </ThemeProvider>
