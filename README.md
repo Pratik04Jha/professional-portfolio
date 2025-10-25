@@ -67,7 +67,7 @@ Get in touch with me through various channels:
 - **Email**: Professional contact information
 - **Download Resume**: Quick access to my CV
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ```bash
 # Clone the repository
