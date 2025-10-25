@@ -10,8 +10,6 @@ import ProjectCards from "@/components/cards/home/projects/project-cards";
 import BackButton from "@/components/ui/back-button";
 import { details } from "@/lib/server-utils";
 
-
-
 const page = () => {
   return (
     <div className=" px-20">

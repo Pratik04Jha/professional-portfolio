@@ -1,5 +1,11 @@
 import { Globe, Gamepad2, Monitor } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
@@ -10,11 +16,20 @@ const stacks = {
     description: "Full-stack web development",
     technologies: [
       { name: "Next.js", category: "Framework" },
-      { name: "Supabase", category: "Backend" },
-      { name: "AI SDK", category: "AI" },
-      { name: "Appwrite", category: "Backend" },
-      { name: "shadcn/ui", category: "UI" }
-    ]
+      { name: "Supabase", category: "Baas" },
+      { name: "AI SDK", category: "Framework" },
+      { name: "Appwrite", category: "Baas" },
+      { name: "shadcn/ui", category: "UI" },
+    ],
+  },
+  app: {
+    icon: Monitor,
+    title: "App Stack",
+    description: "Cross-platform applications",
+    technologies: [
+      { name: "Expo", category: "Mobile" },
+      { name: "Tauri", category: "Desktop" },
+    ],
   },
   game: {
     icon: Gamepad2,
@@ -22,18 +37,9 @@ const stacks = {
     description: "Game development toolkit",
     technologies: [
       { name: "Godot Engine", category: "Engine" },
-      { name: "GDScript", category: "Language" }
-    ]
+      { name: "GDScript", category: "Language" },
+    ],
   },
-  app: {
-    icon: Monitor,
-    title: "App Stack",
-    description: "Cross-platform applications",
-    technologies: [
-      { name: "React Native", category: "Mobile" },
-      { name: "Tauri", category: "Desktop" }
-    ]
-  }
 };
 
 export default function StackCard() {
@@ -50,13 +56,13 @@ export default function StackCard() {
               <Globe className="w-4 h-4" />
               <span className="hidden sm:inline">Web</span>
             </TabsTrigger>
-            <TabsTrigger value="game" className="gap-2">
-              <Gamepad2 className="w-4 h-4" />
-              <span className="hidden sm:inline">Game</span>
-            </TabsTrigger>
             <TabsTrigger value="app" className="gap-2">
               <Monitor className="w-4 h-4" />
               <span className="hidden sm:inline">App</span>
+            </TabsTrigger>
+            <TabsTrigger value="game" className="gap-2">
+              <Gamepad2 className="w-4 h-4" />
+              <span className="hidden sm:inline">Game</span>
             </TabsTrigger>
           </TabsList>
 
@@ -71,10 +77,12 @@ export default function StackCard() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-base">{stack.title}</h3>
-                      <p className="text-sm text-muted-foreground">{stack.description}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {stack.description}
+                      </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex flex-wrap gap-4">
                     {stack.technologies.map((tech) => (
                       <div
