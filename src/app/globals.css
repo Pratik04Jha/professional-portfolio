@@ -175,11 +175,11 @@
   }
 
   .blog-content code {
-    @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+    @apply bg-accent px-2 py-1 rounded text-sm font-mono;
   }
 
   .blog-content pre {
-    @apply text-white p-4 rounded-lg overflow-x-auto mb-4;
+    @apply p-4 rounded-lg overflow-x-auto mb-4;
   }
 
   .blog-content pre code {
@@ -187,7 +187,7 @@
   }
 
   .blog-content blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+    @apply border-l-2 border-foreground/70 pl-4 italic my-4;
   }
 
   .blog-content hr {
@@ -271,28 +271,4 @@
     @apply border px-4 py-3 text-foreground/80;
   }
 
-}
-
-
-.prose table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2rem 0;
-}
-
-.prose th {
-  background-color: #f3f4f6;
-  padding: 0.75rem 1rem;
-  text-align: left;
-  font-weight: 600;
-  border: 1px solid #e5e7eb;
-}
-
-.prose td {
-  padding: 0.75rem 1rem;
-  border: 1px solid #e5e7eb;
-}
-
-.prose tbody tr:nth-child(even) {
-  background-color: #f9fafb;
 }

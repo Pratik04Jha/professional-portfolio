@@ -47,7 +47,7 @@ export default async function GetBlogs({ params }) {
   
 
   return (
-    <div className="prose mx-auto px-30 flex flex-col justify-center w-full">
+    <div className="mx-auto px-30 flex flex-col justify-center w-full">
       <Image
         src={post.coverImage?.url}
         width={10000}
