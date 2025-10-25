@@ -6,9 +6,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import React from "react";
-import { projectDetails } from "@/lib/constants/ProjectDetails";
 import ProjectCards from "@/components/cards/home/projects/project-cards";
 import BackButton from "@/components/ui/back-button";
+import { details } from "@/lib/server-utils";
+
+
 
 const page = () => {
   return (
@@ -23,8 +25,8 @@ const page = () => {
             nulla?
           </CardDescription>
         </CardHeader>
-        <CardContent className="grid md:grid-rows-2 md:grid-cols-3 gap-10">
-          {projectDetails.map((items, index) => (
+        <CardContent className="grid md:grid-cols-3 gap-10">
+          {details.map((items, index) => (
             <ProjectCards items={items} key={index} />
           ))}
         </CardContent>

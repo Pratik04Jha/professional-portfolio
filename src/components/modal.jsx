@@ -1,12 +1,6 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-import { useEffect, useRef } from 'react';
-import { Button } from './ui/button';
-import { Cross } from 'lucide-react';
-import { CrossIcon } from 'lucide-react';
-import { CrosshairIcon } from 'lucide-react';
-import { X } from 'lucide-react';
+"use client";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export default function Modal({ children }) {
   const router = useRouter();
@@ -18,24 +12,19 @@ export default function Modal({ children }) {
     }
   }, []);
 
-  function onDismiss() {
-    router.back();
+  function onDismiss(e) {
+    if (e.target === dialogRef.current) {
+      router.back();
+    }
   }
 
   return (
     <dialog
       ref={dialogRef}
-      onClose={onDismiss}
-      className="backdrop:bg-background/60 rounded-lg h-full flex items-center "
+      onClick={onDismiss}
+      className="backdrop:bg-background/60"
     >
-      <div className="fixed p-20">
-        <Button
-          onClick={onDismiss}
-          variant="outline"
-          className="absolute top-25 right-25 max-w-10 max-h-10"
-        >
-          <X />
-        </Button>
+      <div className="fixed z-1000 -translate-[50%] top-[50%] left-[50%] min-w-300">
         {children}
       </div>
     </dialog>

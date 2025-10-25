@@ -199,15 +199,15 @@
   }
 
   .project-content h1 {
-    @apply text-4xl font-bold mt-8 mb-4;
+    @apply text-3xl font-semibold my-4;
   }
 
   .project-content h2 {
-    @apply text-3xl font-bold mt-8 mb-4;
+    @apply text-2xl font-semibold my-2;
   }
 
   .project-content h3 {
-    @apply text-2xl font-bold mt-6 mb-3;
+    @apply text-xl font-semibold my-2;
   }
 
   .project-content h4 {
@@ -215,12 +215,12 @@
   }
 
   .project-content p {
-    @apply mt-2 mb-4 text-base text-foreground/80;
+    @apply my-4 text-sm text-foreground/90;
   }
 
   .project-content ul,
   .project-content ol {
-    @apply mb-4 pl-6 space-y-2;
+    @apply my-4 pl-5 text-sm space-y-2;
   }
 
   .project-content ul {
@@ -252,7 +252,7 @@
   }
 
   .project-content blockquote {
-    @apply border-l-4 border-gray-300 pl-4 italic my-4;
+    @apply border-l-2 border-foreground/70 pl-4 italic my-4;
   }
 
   .project-content hr {

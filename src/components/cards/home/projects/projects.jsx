@@ -1,4 +1,3 @@
-import { GeistMono } from "geist/font/mono";
 import {
   Card,
   CardContent,
@@ -8,8 +7,8 @@ import {
 } from "../../../ui/card";
 import ProjectCards from "./project-cards";
 import { Button } from "../../../ui/button";
-import { projectDetails } from "@/lib/constants/ProjectDetails";
 import Link from "next/link";
+import { details } from "@/lib/server-utils";
 
 export default function Projects() {
   return (
@@ -23,8 +22,8 @@ export default function Projects() {
       </CardHeader>
       <CardContent className="flex gap-5 flex-col">
         <div className="grid md:grid-rows-1 md:grid-cols-3 gap-10">
-          {projectDetails.map((items, index) =>
-            items.featured ? <ProjectCards items={items} key={index} /> : null
+          {details.map((items, index) =>
+            items.featured = "true" ? <ProjectCards items={items} key={index} /> : null
           )}
         </div>
         <Link href="/projects" className="w-full">

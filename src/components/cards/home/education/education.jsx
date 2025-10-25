@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import EducationLevels from "./education-level";
-import { educationDetails } from "../../../../lib/constants/EducationDetails";
+import { educationDetails } from "@/lib/server-utils";
 
 export default function EducationCard() {
   return (

@@ -35,7 +35,7 @@ export default function ProjectCards({ items }) {
         <div className="flex flex-col gap-2">
           <h1 className="font-semibold">Stack: </h1>
           <div className="flex gap-2 flex-wrap">
-            {items.stack.map((itm, idx) => (
+            {items.tech.map((itm, idx) => (
               <Badge key={idx} variant="outline" className="px-4 py-1">
                 {itm}
               </Badge>
@@ -52,7 +52,7 @@ export default function ProjectCards({ items }) {
           <Tooltip>
             <TooltipTrigger>
               <Link
-                href={items.href}
+                href={items.liveUrl}
                 className="cursor-not-allowed "
                 target="_blank"
                 alt={items.slug}

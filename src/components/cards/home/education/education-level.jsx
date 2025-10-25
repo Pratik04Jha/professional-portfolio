@@ -10,15 +10,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
 
 export default function EducationLevels({ education }) {
   return (
     <Card className="overflow-hidden flex flex-col md:flex-row md:px-5 items-center bg-accent/20">
-      <div className="relative w-1020 overflow-hidden bg-muted rounded-2xl">
+      <div className="relative max-w-100 max-h-70 overflow-hidden bg-muted rounded-2xl">
         <Image
-          src={education.image}
-          alt={education.name}
+          src={education.imgSrc}
+          alt={education.title}
           height={100}
           width={1000}
           className="w-full h-full object-cover pointer-events-none select-none"
@@ -37,17 +36,17 @@ export default function EducationLevels({ education }) {
         <CardHeader>
           <div className="space-y-1">
             <CardTitle className="text-2xl md:flex md:items-center md:gap-2">
-              {education.name}
+              {education.title}
               <Badge variant="outline" className="text-[10px] ">
                 {education.exam}
               </Badge>
             </CardTitle>
             <CardDescription className="text-sm font-medium text-foreground/80">
-              {education.degree}
+              {education.schoolType}
             </CardDescription>
             <div className="flex gap-2 items-center ">
               <p className="text-sm font-medium text-foreground/80">
-                {education.year}
+                {education.duration}
               </p>
             </div>
           </div>
@@ -75,7 +74,7 @@ export default function EducationLevels({ education }) {
                 View details
               </Button>
             </Link>
-            <Link target="_blank" href={education.website}>
+            <Link target="_blank" href={education.schoolWebUrl}>
               <Button className="font-semibold" variant="link">
                 School website
               </Button>

@@ -12,14 +12,13 @@ import Link from "next/link";
 export default function CertificateDetails({ certifications }) {
   return (
     <Card className="flex flex-row ">
-      
-      <div className="w-[50%] rounded-2xl overflow-hidden">
+      <div className="w-[50%] pl-5">
         <Image
           src={certifications.imgSrc}
           width={1000}
           height={100}
           alt=""
-          className="w-full object-cover rounded-2xl pl-5 select-none pointer-events-none"
+          className="w-full object-cover object-center rounded-2xl select-none pointer-events-none"
         />
       </div>
       <div className="w-[50%]">
@@ -27,18 +26,18 @@ export default function CertificateDetails({ certifications }) {
           <CardTitle className="text-2xl">{certifications.title}</CardTitle>
 
           <CardDescription className="text-foreground/90 flex flex-col gap-1 text-sm">
-            <p>
-              <strong>Issuer: </strong> {certifications.issuer}
-            </p>
-            <p>
-              <strong>CredentialId: </strong> {certifications.credentialId}
-            </p>
-            <p>
-              <strong>IssuedData: </strong> {certifications.issuedDate}
-            </p>
+            {[
+              { title: "Issuer", content: certifications.issuer },
+              { title: "CredentialId", content: certifications.credentialId },
+              { title: "IssuedData", content: certifications.issuedDate },
+            ].map((items, index) => (
+              <p>
+                <strong>{items.title}: </strong> {items.content}
+              </p>
+            ))}
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex flex-col h-[78%] justify-between py-5">
+        <CardContent className="flex flex-col justify-between py-5 h-[70%]">
           <p>{certifications.description}</p>
           <div>
             <Link href={certifications.pdfSrc} target="_blank">
